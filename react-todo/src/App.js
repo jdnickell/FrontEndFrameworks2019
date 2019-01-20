@@ -5,7 +5,6 @@ import Todos from './components/Todos'
 import AddTodo from './components/AddTodo'
 import About from './components/pages/About'
 import Header from './components/layout/Header'
-import uuid from 'uuid'
 import axios from 'axios';
 
 class App extends Component {
@@ -29,14 +28,13 @@ class App extends Component {
 
   deleteTodo = (id) => {
       axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-        .then(res =>this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }));
-
-      
+        .then(this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }));
   }
 
   addTodo = (title) => {
     axios.post('https://jsonplaceholder.typicode.com/todos', { title, completed: false } )
-        .then(res => this.setState({ todos: [...this.state.todos, res.data] }));
+        .then(res => this.setState({ todos: [...this.state.todos, res.data] })); 
+        console.log('placeholder api gives back a static id so this only works once')
   }
 
   render() {

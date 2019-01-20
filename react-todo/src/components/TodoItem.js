@@ -7,6 +7,10 @@ export class TodoItem extends Component {
         let todoStyle = this.props.todo.completed ? 'todo-item todo-item-complete' : 'todo-item todo-item-incomplete';
         return todoStyle;
     }
+
+    getCheckedValue = () => {
+        return this.props.todo.completed;
+    }
  
     render() {
         // destructure this.props.todo
@@ -16,9 +20,9 @@ export class TodoItem extends Component {
             <div className={this.getStyle()}>
                 <p>
                     {/* We don't have redux / state management, so we have to go all the way back to App.js where the state exists */}
-                    <input type='checkbox' onChange={this.props.toggleComplete.bind(this, id)} /> 
+                    <input type='checkbox' onChange={this.props.toggleComplete.bind(this, id)} checked={ this.getCheckedValue() } /> 
                     { title }
-                    <button onClick={this.props.deleteTodo.bind(this, id)} className='todo-item-delete'>x</button>
+                    <span onClick={this.props.deleteTodo.bind(this, id)} className='todo-item-delete'>DELETE</span>
                 </p>
             </div>
         )
