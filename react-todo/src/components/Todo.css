@@ -1,0 +1,30 @@
+.todo-item {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px #ccc dotted;
+}
+
+.todo-item-complete {
+    text-decoration: line-through;
+}
+
+.todo-item-incomplete {
+    text-decoration: none;
+}
+
+.todo-item-delete {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+}
+
+.todo-header {
+    background: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}

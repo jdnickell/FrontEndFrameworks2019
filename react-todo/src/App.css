@@ -13,3 +13,20 @@ a {
   color: #333333;
   text-decoration: none;
 }
+
+input {
+  flex: 10;
+  padding: 5px;
+}
+
+.main-form {
+  display: flex;
+}
+
+.container {
+  padding: 0 10%;
+}
+
+.btn-submit{
+  background-color: springgreen;
+}
